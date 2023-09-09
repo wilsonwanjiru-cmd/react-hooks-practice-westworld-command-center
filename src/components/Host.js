@@ -2,13 +2,15 @@ import React from "react";
 import { Card } from "semantic-ui-react";
 import "../stylesheets/Host.css";
 
-function Host() {
-  /* NOTE: The className "host selected" renders a different style than simply "host". */
+function Host({ host }) {
+  // You can use props to pass host data and onClick event handler
   return (
     <Card
-      className="host selected"
-      onClick={/* On Click what? */ null}
-      image={/* I wonder what goes here...*/ ""}
+      className={host.selected ? "host selected" : "host"} // Use host.selected to determine the class
+      onClick={() => {
+        // Handle host selection click here
+      }}
+      image={host.imageUrl} // Use host.imageUrl to display the host image
       raised
       link
     />
@@ -16,3 +18,4 @@ function Host() {
 }
 
 export default Host;
+
